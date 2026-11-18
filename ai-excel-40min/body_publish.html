@@ -1,0 +1,189 @@
+<p style="background:#f5f5f7;border-left:4px solid #0a84ff;padding:18px 22px;margin:0 0 34px;font-size:15px;line-height:1.75;color:#333;border-radius:0 6px 6px 0;">
+<strong style="color:#0a84ff;">实测记录</strong><br/>
+做的事：把 3 个门店的日流水，做成一张月度报表<br/>
+原来：约 2 天　　现在：40 分钟<br/>
+代价：写提示词花了 12 分钟，返工 2 次
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+上个月月底，我对着三张 Excel 表坐了两天。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+不是不会做，是每一步都得手动来一遍。合并、清格式、汇总、算环比、标异常、画图。做完眼睛是花的。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+这个月我换了个做法，把中间最烦的那部分交给 AI。
+</p>
+
+<p style="font-size:19px;font-weight:bold;color:#1a1a1a;margin:0 0 34px;line-height:1.8;">
+结果花了 40 分钟。
+</p>
+
+<p style="text-align:center;margin:0 0 8px;">
+<img src="http://mmbiz.qpic.cn/sz_mmbiz_png/EFiamDibf71UqsuPyGcplI0LYRECVnoRsSz6UojdqYrQRWZWWXFHRlDdFzA4cqXcJsM7O3BVsg8DDrAtfbajukpp0rCjaK1Te87dUIzrTvDxA/0?from=appmsg" style="max-width:100%;border-radius:8px;" />
+</p>
+<p style="font-size:13px;color:#999;text-align:center;margin:0 0 34px;line-height:1.6;">
+同一张报表，两种做法的流程对比
+</p>
+
+<p style="margin:46px 0 0;"><span style="display:inline-block;background:#0a84ff;color:#fff;font-size:19px;font-weight:bold;padding:3px 15px;border-radius:8px;">1</span></p>
+<p style="font-size:20px;font-weight:bold;color:#0a84ff;margin:14px 0 22px;border-bottom:3px solid #0a84ff;padding-bottom:9px;">先说清楚这活到底烦在哪</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+三个门店，每个一份日流水。听起来简单，实际是这样的：
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+A 店的日期是 <strong>2026/11/1</strong>，B 店是 <strong>2026-11-01</strong>，C 店干脆写成 <strong>11 月 1 日</strong>。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+金额栏有的带千分位，有的带"元"字，还有的混着"约"。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+六个步骤里，真正耗时的是第二步——清格式。
+</p>
+
+<p style="font-size:17px;font-weight:bold;color:#e53935;margin:0 0 34px;line-height:1.85;">
+做表最耗时间的从来不是算数，是把脏数据洗干净。
+</p>
+
+<p style="margin:46px 0 0;"><span style="display:inline-block;background:#0a84ff;color:#fff;font-size:19px;font-weight:bold;padding:3px 15px;border-radius:8px;">2</span></p>
+<p style="font-size:20px;font-weight:bold;color:#0a84ff;margin:14px 0 22px;border-bottom:3px solid #0a84ff;padding-bottom:9px;">我是怎么让 AI 接手的</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+第一步不是开 AI，是整理数据。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+我把三张表放进同一个文件，删掉客户姓名和电话，只留日期、门店、品类、金额、数量五列。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+这一步五分钟，但必须做。脱敏是底线，也是后面 AI 能放心处理的前提。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+然后把文件丢给 AI，说清楚要什么。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+它给了我两套方案：一是直接帮我算，二是写一段能重复跑的脚本。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+我选了脚本。因为下个月还要再做一次，能复用的才叫自动化。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+第一次跑，报错了。日期列三种格式混在一起，脚本把"11 月 1 日"当成了文本。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+我补了一句要求，让它先把日期统一成标准格式再往下走。第二次跑通。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+从打开文件到出图，40 分钟。其中 12 分钟花在写提示词和改提示词上。
+</p>
+
+<p style="margin:46px 0 0;"><span style="display:inline-block;background:#0a84ff;color:#fff;font-size:19px;font-weight:bold;padding:3px 15px;border-radius:8px;">3</span></p>
+<p style="font-size:20px;font-weight:bold;color:#0a84ff;margin:14px 0 22px;border-bottom:3px solid #0a84ff;padding-bottom:9px;">踩到的三个坑</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+<strong>坑一，合并单元格必炸。</strong>
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+只要表里有合并单元格，读进来的数据就会错位。跑之前先全部拆开，把空白补齐。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+<strong>坑二，数字里混了符号就变成文本。</strong>
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+"1,280"和"1280元"在 AI 眼里不是数字。汇总时它们会被直接跳过，而且不报错——你只会得到一个偏小的总数。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+<strong>坑三，AI 会自作主张补数据。</strong>
+</p>
+
+<blockquote style="border-left:4px solid #e53935;background:#fdf3f3;padding:16px 20px;margin:0 0 18px;font-size:15px;line-height:1.85;color:#444;">
+我第一版提示词没写清楚，有一天的流水是空的，AI 按前后两天均值给我补了一个数，还补得挺像。
+</blockquote>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+后来我在提示词里加了一句硬要求：<strong style="color:#e53935;">缺失就标记为空，不要推测，不要补全。</strong>
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 34px;line-height:1.9;">
+做报表最怕的不是缺数据，是假数据看起来像真的。
+</p>
+
+<p style="margin:46px 0 0;"><span style="display:inline-block;background:#0a84ff;color:#fff;font-size:19px;font-weight:bold;padding:3px 15px;border-radius:8px;">4</span></p>
+<p style="font-size:20px;font-weight:bold;color:#0a84ff;margin:14px 0 22px;border-bottom:3px solid #0a84ff;padding-bottom:9px;">可以直接抄的提示词</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+我最后跑通的那版大概是这个结构，把方括号里的换成你自己的：
+</p>
+
+<p style="background:#f7f9fc;border:1px solid #e3e9f0;border-radius:8px;padding:20px 22px;margin:0 0 18px;font-size:14px;line-height:1.95;color:#3d4a5c;">
+你是数据处理助手。<br/>
+我有一张表，列是：[日期][门店][品类][金额][数量]。<br/>
+请按顺序做这几件事：<br/>
+1. 把日期统一成 YYYY-MM-DD，无法识别的单独列出来<br/>
+2. 把金额转成纯数字，去掉千分位和单位<br/>
+3. 按门店、按品类分别汇总金额和数量<br/>
+4. 计算每个品类相对上月的环比<br/>
+5. 标出环比波动超过 30% 的品类<br/>
+6. 输出可直接粘贴进 Excel 的表格<br/>
+注意：缺失值标记为空，不要推测，不要补全。<br/>
+每一步做完先告诉我结果，等我确认再继续。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+最后那句"等我确认再继续"很重要。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 34px;line-height:1.9;">
+让它一口气跑完，中间错了你根本看不出来；拆开一步步来，出错当场就能发现。
+</p>
+
+<p style="margin:46px 0 0;"><span style="display:inline-block;background:#1a1a1a;color:#fff;font-size:15px;font-weight:bold;padding:6px 18px;border-radius:4px;">说点实话</span></p>
+
+<p style="font-size:15px;color:#333;margin:18px 0 16px;line-height:1.9;">
+40 分钟里，省下来的是原来那两天里约 6 小时的清洗和 3 小时的核对。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+真正的判断一点没少：哪些异常是真的、哪家店的数据有问题、这张表能不能拿去开会，还是得我自己盯。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+所以我不太认同"AI 帮我做完了整张表"这种说法。
+</p>
+
+<p style="font-size:17px;font-weight:bold;color:#1a1a1a;margin:0 0 16px;line-height:1.85;text-align:center;">
+它替我做的是我不想做的那 70%。<br/>剩下的 30%，才是我的活。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 16px;line-height:1.9;">
+下次我打算试试把它做成一个固定流程，每个月丢文件进去就出表。
+</p>
+
+<p style="font-size:15px;color:#333;margin:0 0 34px;line-height:1.9;">
+如果跑通了，再写一篇。
+</p>
+
+<p style="background:#f0f6ff;border-radius:8px;padding:18px 20px;margin:0 0 24px;font-size:15px;line-height:1.9;color:#1a4a8a;">
+<strong>关注后回复「模板」，</strong>拿这份提示词、清洗检查清单，还有一张我自己用的表结构示例。
+</p>
+
+<p style="font-size:13px;color:#aaa;margin:0 0 8px;line-height:1.7;text-align:center;">
+文中为本人实测，数据源不同结果会有差异。
+</p>
