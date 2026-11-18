@@ -25,9 +25,13 @@ description: "公众号全链路运营：冷启动诊断、选题规划、推文
 | 账号没流量 / 涨不动 / 刚注册 / 要做规划 | `references/01-ops-coldstart.md` |
 | 下个月发什么 / 没选题 / 选题没效果 | `references/02-topic-selection.md` |
 | 写一篇推文 / 稿子太像 AI / 结构怎么搭 | `references/03-writing.md` |
+| 要现成模板 / 不知道实测稿长什么样 | `references/05-sample-teardown.md` + `samples/excel-measure/body.html` |
 | 排版 / 建草稿 / 发布 / 接口报错 | `references/04-publish.md` |
 
 一个请求只读最相关的一篇。全链路任务按顺序读。
+
+有范文时优先抄结构：`samples/excel-measure/body.html` 是跑通过的实测稿正文，
+改数字、改细节、换提示词即可，样式参数不要动。
 
 ## 四个阶段的核心答案
 
